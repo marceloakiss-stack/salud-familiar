@@ -4,8 +4,9 @@ import './styles/Home.css'
 import './styles/Personas.css'
 import './styles/Historial.css'
 
+// Variable corregida y usada en TODAS las peticiones
+const API = 'https://salud-familiar-backend.onrender.com';
 
-const API_URL = 'https://salud-familiar-backend.onrender.com';
 function App() {
   const [vista, setVista] = useState('home')
   const [personaSeleccionada, setPersonaSeleccionada] = useState(null)
@@ -61,7 +62,7 @@ function Personas({ onVerHistorial }) {
 
   const cargarPersonas = async () => {
     try {
-      const res = await fetch(`${API}/Personas`)
+      const res = await fetch(`${API}/api/Personas`)
       const data = await res.json()
       setPersonas(data)
     } catch (error) {
@@ -96,13 +97,13 @@ function Personas({ onVerHistorial }) {
       }
 
       if (editando) {
-        await fetch(`${API}/Personas/${editando.id}`, {
+        await fetch(`${API}/api/Personas/${editando.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(datos)
         })
       } else {
-        await fetch(`${API}/Personas`, {
+        await fetch(`${API}/api/Personas`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(datos)
@@ -130,7 +131,7 @@ function Personas({ onVerHistorial }) {
 
   const eliminar = async (id) => {
     if (confirm('¿Está seguro de eliminar esta persona y todos sus registros?')) {
-      await fetch(`${API}/Personas/${id}`, { method: 'DELETE' })
+      await fetch(`${API}/api/Personas/${id}`, { method: 'DELETE' })
       cargarPersonas()
     }
   }
@@ -231,7 +232,7 @@ function Historial({ persona, onVolver }) {
 
   const cargarRegistros = async () => {
     try {
-      const res = await fetch(`${API}/Registros/persona/${persona.id}`)
+      const res = await fetch(`${API}/api/Registros/persona/${persona.id}`)
       if (res.ok) {
         const data = await res.json()
         setRegistros(data)
@@ -275,7 +276,7 @@ function Historial({ persona, onVolver }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await fetch(`${API}/Registros`, {
+      await fetch(`${API}/api/Registros`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
