@@ -4,8 +4,8 @@ import './styles/Home.css'
 import './styles/Personas.css'
 import './styles/Historial.css'
 
-const API = 'http://localhost:5075/api'
 
+const API_URL = 'https://salud-familiar-backend.onrender.com';
 function App() {
   const [vista, setVista] = useState('home')
   const [personaSeleccionada, setPersonaSeleccionada] = useState(null)

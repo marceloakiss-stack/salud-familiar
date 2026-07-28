@@ -36,3 +36,4 @@ C:\SaludFamiliar\backend\obj\Debug\net8.0\refint\backend.dll
 C:\SaludFamiliar\backend\obj\Debug\net8.0\backend.pdb
 C:\SaludFamiliar\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\SaludFamiliar\backend\obj\Debug\net8.0\ref\backend.dll
+C:\SaludFamiliar\backend\obj\Debug\net8.0\backend.sourcelink.json
