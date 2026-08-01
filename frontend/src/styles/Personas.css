@@ -111,3 +111,59 @@ tbody tr:hover {
     background: #17a2b8;
     color: white;
 }
+
+@media (max-width: 700px) {
+    .personas-container {
+        padding: 10px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .table-container {
+        overflow-x: visible;
+        box-shadow: none;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    tbody td {
+        border: none;
+        padding: 6px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #667eea;
+        margin-right: 10px;
+    }
+
+    .btn-action {
+        margin: 3px;
+    }
+}

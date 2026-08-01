@@ -203,13 +203,13 @@ function Personas({ onVerHistorial }) {
           <tbody>
             {personas.map(p => (
               <tr key={p.id}>
-                <td>{p.id}</td>
-                <td>{p.nombre}</td>
-                <td>{p.sexo === 'M' ? 'Masculino' : 'Femenino'}</td>
-                <td>{new Date(p.fechaNacimiento).toLocaleDateString()}</td>
-                <td>{calcularEdad(p.fechaNacimiento)} años</td>
-                <td>{p.altura} cm</td>
-                <td>
+                <td data-label="ID">{p.id}</td>
+                <td data-label="Nombre">{p.nombre}</td>
+                <td data-label="Sexo">{p.sexo === 'M' ? 'Masculino' : 'Femenino'}</td>
+                <td data-label="Fecha Nac.">{new Date(p.fechaNacimiento).toLocaleDateString()}</td>
+                <td data-label="Edad">{calcularEdad(p.fechaNacimiento)} años</td>
+                <td data-label="Altura">{p.altura} cm</td>
+                <td data-label="Acciones">
                   <button className="btn-action btn-edit" onClick={() => editar(p)}>✏️</button>
                   <button className="btn-action btn-delete" onClick={() => eliminar(p.id)}>🗑️</button>
                   <button className="btn-action btn-historial" onClick={() => onVerHistorial(p)}>📊 Historial</button>
@@ -381,15 +381,15 @@ function Historial({ persona, onVolver }) {
                 const diag = getDiagnosticoIMC(r.imc)
                 return (
                   <tr key={r.id}>
-                    <td>{new Date(r.fecha).toLocaleDateString()}</td>
-                    <td>{r.peso} kg</td>
-                    <td><strong>{r.imc}</strong></td>
-                    <td>
+                    <td data-label="Fecha">{new Date(r.fecha).toLocaleDateString()}</td>
+                    <td data-label="Peso">{r.peso} kg</td>
+                    <td data-label="IMC"><strong>{r.imc}</strong></td>
+                    <td data-label="Diagnóstico">
                       <span className={`imc-indicator ${diag.clase}`}>
                         {diag.texto}
                       </span>
                     </td>
-                    <td>{r.diagnostico || '-'}</td>
+                    <td data-label="Obs.">{r.diagnostico || '-'}</td>
                   </tr>
                 )
               })

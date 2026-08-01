@@ -34,3 +34,23 @@ body {
     background: white;
     color: #667eea;
 }
+
+/* Arreglo inputs que se ven negros en modo oscuro del celular */
+input,
+select,
+textarea {
+    background-color: #ffffff !important;
+    color: #333 !important;
+    color-scheme: light;
+}
+
+/* Reducir espaciados generales en pantallas chicas */
+@media (max-width: 600px) {
+    .nav {
+        padding: 10px 15px;
+    }
+
+    .nav h1 {
+        font-size: 1.2rem;
+    }
+}

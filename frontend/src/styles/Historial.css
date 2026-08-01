@@ -196,3 +196,63 @@ tbody tr:hover {
         padding: 0;
     }
 }
+
+@media (max-width: 700px) {
+    .historial-container {
+        padding: 10px;
+    }
+
+    .registro-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-print {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: visible;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    tbody td {
+        border: none;
+        padding: 6px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #667eea;
+        margin-right: 10px;
+    }
+}
